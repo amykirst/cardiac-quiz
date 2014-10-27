@@ -2,103 +2,118 @@
 
 Notes:
 
-- How do I make the page fit in the window screen without creating a scroll bar if content is not large enough? 
 - Need to style link to make match site
+- Need to add hover state to Find a Doctor button
 
 */
+.outline {
+  display:none
+}
 
 html {
-	height: 100%;
+  background:#eaeaea url(background.png) repeat-x left top
 }
+
 body {
-	background: #eaeaea url(background.png) repeat-x left top;
-	box-sizing: border-box;
-    height: 100%;
-    margin:0;
-    padding:30px 0;
-    font-family: Helvetica,Arial,Tahoma,sans-serif;
-    font-size: 15px;
-    border-top: 1px #0068ac;
+  margin:0;
+  padding:30px 0;
+  font-family:Helvetica,Arial,Tahoma,sans-serif;
+  font-size:15px;
+  border-top:1px #0068ac
 }
 
 header {
-	background: #0068ac;
-	max-width: 980px;
-	margin:0 auto 30px auto;
+  background:#0068ac;
+  max-width:980px;
+  margin:0 auto 30px
 }
 
 .mainWrap {
-	background: #fff;
-	border-radius: 10px;
-	box-shadow: 0 0 10px 0;
-	padding: 30px 30px 0 30px;
-	box-sizing: border-box;
-	max-width: 980px;
-	min-height:100%;
-	margin:.5em auto 30px auto;
-	color: #666;
-	line-height: 150%;
-	overflow: auto;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 0 10px 0;
+  padding:30px;
+  box-sizing:border-box;
+  max-width:980px;
+  min-height:100%;
+  margin:0 auto;
+  color:#666;
+  line-height:150%
+/* background: #fff url("heart.jpg") no-repeat 95% 95%; */
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: NovareseStd-Book,"NovareseStd Book","Novarese Std Book",Helvetica,Tahoma,sans-serif;
-	font-weight: 400;
-	line-height:120%;
-	color: #0068ac;
+h1,h2,h3,h4,h5,h6 {
+  font-family:NovareseStd-Book,"NovareseStd Book","Novarese Std Book",Helvetica,Tahoma,sans-serif;
+  font-weight:400;
+  line-height:120%;
+  color:#0068ac
 }
 
 p {
-	margin: 1.2em 0;
+  margin:1.2em 0
 }
 
 .question {
-	margin-top: 30px;
+  margin-top:30px
 }
 
 .questionNumber {
-	font-weight: bold;
-	color: #0068ac;
+  font-weight:700;
+  color:#0068ac
 }
 
 .questionText {
-	font-weight:bold;
+  font-weight:700
 }
 
 input[type=text] {
-	height: 40px;
-	border-radius: 5px;
-	border: 2px solid #eaeaea;
-	width: 275px;
+  height:40px;
+  border-radius:5px;
+  border:2px solid #eaeaea;
+  width:275px
 }
 
 input[type=text]:focus {
-	outline-style:none;
-	box-shadow:none;
-	border: 2px solid #666;
+  outline-style:none;
+  box-shadow:none;
+  border:2px solid #d1d1d1
 }
-input[type=submit] {
-	display: block;
-	margin-top: 2em;
-	width: 150px;
-	color: #fff;
-	border-radius: 5px;
-	line-height: 120%;
-	background-color: #b91806;
-	height: 45px;
-	border:none;
 
-} 
+input[type=submit] {
+  display:block;
+  margin-top:2em;
+  width:150px;
+  height:45px;
+  border:none;
+  line-height:120%
+}
+
+.doctorButton a,input[type=submit] {
+  display:block;
+  margin-top:2em;
+  color:#fff;
+  border-radius:5px;
+  background-color:#b91806
+}
 
 input[type=submit]:focus {
-	outline-style:none;
-	box-shadow:none;
-	background-color: #c81806;
-	}
+  outline-style:none;
+  box-shadow:none;
+  background-color:#da1c07
+}
 
 .tip {
-	background-color: #eaeaea;
-	border-radius: 10px;
-	padding: 1.2em;
-	margin: 30px 0;
+  background-color:#eaeaea;
+  border-radius:10px;
+  padding:1.2em;
+  margin-top:30px
+}
+
+.doctorButton a {
+  text-align:center;
+  height:70px;
+  width:300px;
+  font-size:1.5em;
+  text-decoration:none;
+  line-height:3em
 }
