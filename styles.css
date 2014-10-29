@@ -1,11 +1,29 @@
-/* 
 
-Notes:
 
-- Need to style link to make match site
-- Need to add hover state to Find a Doctor button
+/* ---------------------- CSS Reset -----------------------*/
+a img {
+	border: 0;
+}
 
-*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+	font-size: 100%;
+	font-weight: 400;
+}
+
+p {
+	margin: 0 0 1em;
+	line-height: 1.5;
+}
+
+body {
+	margin: 0;
+}
+
+/* ---------------------- Styles -----------------------*/
+
 .outline {
   display:none
 }
@@ -15,11 +33,23 @@ html {
 }
 
 body {
-  margin:0;
   padding:30px 0;
   font-family:Helvetica,Arial,Tahoma,sans-serif;
   font-size:15px;
-  border-top:1px #0068ac
+  border-top:1px #0068ac;
+  min-width:280px;
+}
+
+a:active,a:link,a:visited {
+  color:#0067ab
+}
+
+a:visited {
+  color:#888
+}
+
+a:focus,a:hover {
+  color:#474646
 }
 
 header {
@@ -46,7 +76,27 @@ h1,h2,h3,h4,h5,h6 {
   font-family:NovareseStd-Book,"NovareseStd Book","Novarese Std Book",Helvetica,Tahoma,sans-serif;
   font-weight:400;
   line-height:120%;
-  color:#0068ac
+  color:#0068ac;
+  margin:1.5em 0 .5em;
+}
+
+h1 {
+  font-size:2.5em;
+  margin: 0;
+  padding: 0;
+}
+
+
+h2 {
+  font-size:1.67em
+}
+
+h3 {
+  font-size:1.4em
+}
+
+h4,h5,h6 {
+  font-size:1.2em
 }
 
 p {
@@ -63,20 +113,21 @@ p {
 }
 
 .questionText {
-  font-weight:700
+  font-weight:700;
+  margin-top: 1.5em;
 }
 
 input[type=text] {
   height:40px;
   border-radius:5px;
-  border:2px solid #eaeaea;
+  border:2px solid #d1d1d1;
   width:275px
 }
 
 input[type=text]:focus {
   outline-style:none;
   box-shadow:none;
-  border:2px solid #d1d1d1
+  border:2px solid #a7a7a7
 }
 
 input[type=submit] {
@@ -116,4 +167,36 @@ input[type=submit]:focus {
   font-size:1.5em;
   text-decoration:none;
   line-height:3em
+}
+
+.doctorButton a:hover {
+	background-color: #da1c07;
+}
+
+/* ---------------------- Mobile Styles -----------------------*/
+
+@media screen and (max-width:1040px) {
+	body {
+	  padding-left:30px;
+	  padding-right: 30px;
+	}
+}
+
+@media screen and (max-width:450px) {
+	header img {
+		max-width: 300px;
+		height:auto;
+	}
+	body {
+	  padding-left:20px;
+	  padding-right: 20px;
+	}
+
+	.mainWrap {
+		padding: 20px;
+	}
+
+  input[type=text], .doctorButton a {
+  	width:100%;
+  }
 }

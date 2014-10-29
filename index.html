@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What's Your Heart Attack Risk?</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
  </head>
@@ -13,7 +14,7 @@
  <div class="mainWrap" role="main">
  
  <h1>What's Your Heart Attack Risk?</h1>
- <!--
+ 
  <div class="questionTemplate">
  
  <p>The choices that you make today will affect your next ten years. Take our short quiz to find out if you're at risk of a heart attack in the next decade.</p>
@@ -23,15 +24,18 @@
  <p class="questionText">What is your high-density lipoprotein (HDL) cholesterol level?</p>
  <form role="form">
  <input name="age" type="text">
+ <p class="questionText">Are you on blood pressure medication?</p>
+ <input  name="medication" type="radio" value="Yes">Yes<br>
+ <input name="medication" type="radio" value="No">No<br>
  <input type="submit" value="Next">
  </form>
  <div class="tip">
 	<p>HDL cholesterol is also known as “good” cholesterol. If you don’t know your HDL level, ask your doctor for a cholesterol test.</p>
-	<p>Don’t have a doctor? <a alt="Catholic Health" href="http://www.chsbuffalo.org">Click here to find a primary care doctor near you.</a></p>
+	<p>Don’t have a doctor? <a alt="Catholic Health" href="http://www.chsbuffalo.org/physicians">Click here to find a primary care doctor near you.</a></p>
  </div> 
  </section>
- </div>
--->
+ </div><!--end questionTemplate -->
+
  <!-- results template -->
  <div class="resultsTemplate">
     <h2 class="resultCategory">Uh oh! You’re at risk for a heart attack in the next 10 years.</h2>
@@ -47,5 +51,6 @@
  </body>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="modernizr.custom.84736.js"></script>
+  <script src="respond.js"></script>
   <script src="app.js"></script>
 </html>
