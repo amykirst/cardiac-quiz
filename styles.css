@@ -28,6 +28,10 @@ body {
   display:none
 }
 
+.hide {
+	display:none;
+}
+
 html {
   background:#eaeaea url(background.png) repeat-x left top
 }
@@ -103,13 +107,12 @@ p {
   margin:1.2em 0
 }
 
-.question {
-  margin-top:30px
-}
+
 
 .questionNumber {
   font-weight:700;
-  color:#0068ac
+  color:#0068ac;
+  margin-top: 30px;
 }
 
 .questionText {
@@ -130,22 +133,27 @@ input[type=text]:focus {
   border:2px solid #a7a7a7
 }
 
-input[type=submit] {
-  display:block;
-  margin-top:2em;
+button {
   width:150px;
   height:45px;
   border:none;
   line-height:120%
 }
 
-.doctorButton a,input[type=submit] {
+.doctorButton a, button {
   display:block;
   margin-top:2em;
   color:#fff;
   border-radius:5px;
   background-color:#b91806
 }
+
+button:focus {
+  outline-style:none;
+  box-shadow:none;
+  border:2px solid #b91806
+}
+
 
 input[type=submit]:focus {
   outline-style:none;
@@ -169,9 +177,10 @@ input[type=submit]:focus {
   line-height:3em
 }
 
-.doctorButton a:hover {
+.doctorButton a:hover, button:hover {
 	background-color: #da1c07;
 }
+
 
 /* ---------------------- Mobile Styles -----------------------*/
 

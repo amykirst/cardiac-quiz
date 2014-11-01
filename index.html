@@ -1,56 +1,225 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
   <title>What's Your Heart Attack Risk?</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
- </head>
- <body>
- 
- <header role="banner">
- <img src="logo.png" alt="Catholic Health" width="348" height="67">
- </header>
- <div class="mainWrap" role="main">
- 
- <h1>What's Your Heart Attack Risk?</h1>
- 
- <div class="questionTemplate">
- 
- <p>The choices that you make today will affect your next ten years. Take our short quiz to find out if you're at risk of a heart attack in the next decade.</p>
- <section class="question">
- <h2 class="outline">Question</h2>
- <p class="questionNumber">Question 4 of 5</p>
- <p class="questionText">What is your high-density lipoprotein (HDL) cholesterol level?</p>
- <form role="form">
- <input name="age" type="text">
- <p class="questionText">Are you on blood pressure medication?</p>
- <input  name="medication" type="radio" value="Yes">Yes<br>
- <input name="medication" type="radio" value="No">No<br>
- <input type="submit" value="Next">
- </form>
- <div class="tip">
-	<p>HDL cholesterol is also known as “good” cholesterol. If you don’t know your HDL level, ask your doctor for a cholesterol test.</p>
-	<p>Don’t have a doctor? <a alt="Catholic Health" href="http://www.chsbuffalo.org/physicians">Click here to find a primary care doctor near you.</a></p>
- </div> 
- </section>
- </div><!--end questionTemplate -->
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
 
- <!-- results template -->
- <div class="resultsTemplate">
-    <h2 class="resultCategory">Uh oh! You’re at risk for a heart attack in the next 10 years.</h2>
-    <p>Your score is <span class="score">7.5%</span>. Scores of 7.5% or higher are at risk of a heart attack.</p>
-<p>We recommend that you speak to your doctor about ways to reduce your risk. If you don’t have a doctor, click on the button below to find one near you.</p>
-<div class="doctorButton">
-	<a href="http://www.chsbuffalo.org/Physicians" alt="Find a Doctor">Find a Doctor</a>
-</div><!-- end doctorButton -->
-</div>
- <!-- end results template -->
-</div><!-- end mainWrap -->
+<body>
+  <header>
+    <img alt="Catholic Health" height="67" src="logo.png" width="348">
+  </header>
 
- </body>
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="modernizr.custom.84736.js"></script>
-  <script src="respond.js"></script>
-  <script src="app.js"></script>
+  <div class="mainWrap">
+    <h1>What's Your Heart Attack Risk?</h1>
+
+    
+      <p>The choices that you make today will affect your next ten years. Take
+      our short quiz to find out if you're at risk of a heart attack in the
+      next decade.</p>
+
+      <section class="questions">
+        <h2 class="outline">Question</h2>
+
+        <p class="questionNumber">Question 1 of </p>
+
+        <div class="question">
+          <p class="questionText">What is your age range?</p>
+
+          <form>
+            <select>
+              <option value="20-34">
+                20-34
+              </option>
+
+              <option value="35-39">
+                35-39
+              </option>
+
+              <option value="40-44">
+                40-44
+              </option>
+
+              <option value="45-49">
+                45-49
+              </option>
+
+              <option value="50-54">
+                50-54
+              </option>
+
+              <option value="55-59">
+                55-59
+              </option>
+
+              <option value="60-64">
+                60-64
+              </option>
+
+              <option value="65-69">
+                65-69
+              </option>
+
+              <option value="70-74">
+                70-74
+              </option>
+
+              <option value="75-79">
+                75-79
+              </option>
+            </select>
+          </form>
+        </div><!--end questionAge -->
+
+        <div class="question hide">
+          <p class="questionText">What is your total cholesterol?</p>
+
+          <form>
+            <select>
+              <option value="Less than 160">
+                Less than 160
+              </option>
+
+              <option value="160-199">
+                160-199
+              </option>
+
+              <option value="200-239">
+                200-239
+              </option>
+
+              <option value="240-279">
+                240-279
+              </option>
+
+              <option value="Greater than 279">
+                Greater than 279
+              </option>
+            </select>
+          </form>
+
+          <div class="tip">
+            <p>Don't know your total cholesterol? Attend one of our free
+            screenings. <a href="http://www.chsbuffalo.org/events" target=
+            "_blank">Click here to view upcoming screenings in our events
+            calendar.</a></p>
+          </div>
+        </div><!-- end cholesterol -->
+
+        <div class="question hide">
+          <p class="questionText">Are you a smoker?</p>
+
+          <form>
+            <input name="smoker" type="radio" value="Yes">Yes<br>
+            <input name="smoker" type="radio" value="No">No<br>
+          </form>
+        </div><!-- end questionSmoker -->
+
+        <div class="question hide">
+          <p class="questionText">What is your high-density lipoprotein (HDL)
+          cholesterol level?</p>
+
+          <form>
+            <select>
+              <option value="60">
+                60
+              </option>
+
+              <option value="50-59">
+                50-59
+              </option>
+
+              <option value="40-49">
+                40-49
+              </option>
+
+              <option value="Less than 40">
+                Less than 40
+              </option>
+            </select>
+          </form>
+
+          <div class="tip">
+            <p>HDL cholesterol is also known as “good” cholesterol. If you
+            don’t know your HDL level, ask your doctor for a cholesterol
+            test.</p>
+
+            <p>Don’t have a doctor? <a href=
+            "http://www.chsbuffalo.org/physicians">Click here to find a primary
+            care doctor near you.</a></p>
+          </div>
+        </div><!-- end questionHDL -->
+
+        <div class="question hide">
+          <p class="questionText">Are you on blood pressure medication?</p>
+
+          <form>
+            <input name="medication" type="radio" value="Yes">Yes<br>
+            <input name="medication" type="radio" value="No">No<br>
+          </form>
+        </div><!-- end questionMed -->
+
+        <div class="question hide">
+          <p class="questionText">What is your Systolic Blood Pressure reading
+          (first number)?</p>
+
+          <form>
+            <select>
+              <option value="Less than 120">
+                Less than 120
+              </option>
+
+              <option value="120-129">
+                120-129
+              </option>
+
+              <option value="130-139">
+                130-139
+              </option>
+
+              <option value="140-159">
+                140-159
+              </option>
+
+              <option value="Greater than 159">
+                Greater than 159
+              </option>
+            </select>
+          </form>
+
+          <div class="tip">
+            <p>Don't know your blood pressure? Attend one of our free
+            screenings. <a href="http://www.chsbuffalo.org/events" target=
+            "_blank">Click here to view upcoming screenings in our events
+            calendar.</a></p>
+          </div>
+        </div><!-- end questionSBP -->
+
+       
+          <button>Next</button> 
+        
+      </section><!-- end questions -->
+
+    <section class="results hide">
+      <h2 class="resultCategory">Uh oh! You’re at risk for a heart attack in
+      the next 10 years.</h2>
+
+      <p>Your score is <span class="score">7.5%</span>. Scores of 7.5% or
+      higher are at risk of a heart attack.</p>
+
+      <p>We recommend that you speak to your doctor about ways to reduce your
+      risk. If you don’t have a doctor, click on the button below to find one
+      near you.</p>
+
+      <div class="doctorButton">
+        <a href="http://www.chsbuffalo.org/Physicians">Find a Doctor</a>
+      </div><!-- end doctorButton -->
+    </section><!-- end results  -->
+  </div><!-- end mainWrap -->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script> <script src="modernizr.custom.84736.js"></script> <script src="respond.js"></script> <script src="app.js"></script>
+</body>
 </html>
