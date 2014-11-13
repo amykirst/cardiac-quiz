@@ -1,6 +1,4 @@
 // Need to provide option to restart quiz
-// Need to provide error message if option is not selected before "next" is hit
-// Edit text on results page
 
 
 function setHeight() {
@@ -23,7 +21,7 @@ function quesProcess() {
     // display total number of questions
     $(".questionNumber").append(totalQues);
 
-    // calculate percentage
+    // calculate percentage based on score
     function calculatePerc() {
         if (score < 9) {
           percentage = 0;
@@ -70,26 +68,28 @@ function quesProcess() {
         console.log("Percentage is: " + percentage);
       } // end calculatePerc function
       
-    // Show Results
+    // Show results based on percentage
     function showResults() {
         if (percentage < 8) {
           $(".resultCategory").text(
-            "You're not at risk for a heart attack in the next 10 years.");
-          $(".results").append("<p>Your risk of a heart attack is " +
+            "Congratulations! You are not at risk for a heart attack in the next 10 years.");
+          $(".results").append("<p>Your 10-year risk of a heart attack is " +
             percentage +
-            "%. Only scores of 7.5% or above are at risk of a heart attack in the next 10 years.</p><p>Keep up the good work!</p>"
+            "%. Only scores of 7.5% or above are at a high risk.</p><p>Continue to eat heart-healthy foods and remain active to keep your risk low.</p>"
           );
         } else {
           $(".resultCategory").text(
-            "Uh oh! You're at risk of a heart attack in the next 10 years.");
-          $(".results").append("<p>Your risk of a heart attack is " +
+            "Uh oh! You're at risk of having a heart attack in the next 10 years.");
+          $(".results").append("<p>Your 10-year risk of a heart attack is " +
             percentage +
-            "%. Scores of 7.5% or higher are at risk of a heart attack.</p> <p>We recommend that you speak to your doctor about ways to reduce your risk. If you don’t have a doctor, click on the button below to find one near you.</p> <div class='doctorButton'><a href='http://www.chsbuffalo.org/Physicians'>Find a Doctor</a></div>"
+            "%. Anyone with a risk greater than 7.5% should seek treatment right away.</p> <p>Speak to your doctor about ways to reduce your risk. If you don’t have a doctor, click on the button below to find one near you.</p> <div class='doctorButton'><a href='http://www.chsbuffalo.org/Physicians'>Find a Doctor</a></div>"
           );
         }
       } // end showResults function
 
-    $("button").click(function() {
+      // Show next question
+  function showNext() {
+      // update to next question if the user entered an answer
       position++;
       quesNum = position + 1; // Why do I need to declare this again here? Shouldn't it be updating the quesNum in the quesProcess function?
       // hide previous question
@@ -97,9 +97,9 @@ function quesProcess() {
       // show next question 
       if (position < totalQues) {
         $(".question").eq(position).show();
-        $(".questionNumber").text("Question " + quesNum + " of " +
-          totalQues);
+        $(".questionNumber").text("Question " + quesNum + " of " + totalQues);
       } else {
+        // at the end of the questions, hide the questions and show the results
         $(".question, .questionNumber, button").hide();
         // calculate risk percentage
         calculatePerc();
@@ -107,7 +107,36 @@ function quesProcess() {
         $(".results").show();
         showResults();
       }
-    }); // end button click function
+    } // end showNext function
+
+    // Validate form fields
+    function isValid() {
+    var form = $(".questions form:visible");
+    var input = form.find("input");
+    var select = form.find("select");
+    var inputType = input.length ? "input" : (select.length ? "select" : "error");
+    if (inputType == "error") {
+        alert("Invalid input type found");
+        return false;
+    }
+    if (form.find("input[type='radio']").length) { 
+        return form.find("input[type='radio']:checked").length;
+    }
+    // return value of input or select if an answer is given
+    var inputVal = form.find(inputType).val();
+    return inputVal !== null && inputVal.length;
+}  // end isValid function
+
+
+
+     // Check for response on click of "Next" button
+     $("button").click(function() {
+    if (!isValid()) {
+        alert("Please enter a response.");
+    } else {
+     showNext();
+    }
+     }); // end button click function
 
     // score question 
     $("form :input").change(function() {
@@ -116,6 +145,9 @@ function quesProcess() {
       //console.log(quesNum);
       if (quesNum == 1) {
         age = $(this).val();
+        if (isNaN(age)) {
+        	alert("Please enter a number.");
+        } else {
         if (age >= 20 && age <= 34) {
           score = -7;
         } else if (age >= 35 && age <= 39) {
@@ -138,6 +170,7 @@ function quesProcess() {
           score = 16;
         }
         console.log(score);
+      } // end else statement
       } // end question 1 if statement
       if (quesNum == 2) {
         var cholesterol = $(this).val();

@@ -125,7 +125,7 @@ input[type=text] {
   border-radius:5px;
   border:2px solid #d1d1d1;
   width:275px;
-  padding: 5px;
+  padding: 5px 15px;
 }
 
 input[type=text]:focus {
