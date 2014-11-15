@@ -1,35 +1,32 @@
-
-
 /* ---------------------- CSS Reset -----------------------*/
 a img {
-	border: 0;
+  border:0
 }
 
 h1,h2,h3,h4,h5,h6 {
-	margin: 0;
-	padding: 0;
-	line-height: 1em;
-	font-size: 100%;
-	font-weight: 400;
+  margin:0;
+  padding:0;
+  line-height:1em;
+  font-size:100%;
+  font-weight:400
 }
 
 p {
-	margin: 0 0 1em;
-	line-height: 1.5;
+  margin:0 0 1em;
+  line-height:1.5
 }
 
 body {
-	margin: 0;
+  margin:0
 }
 
 /* ---------------------- Styles -----------------------*/
-
 .outline {
   display:none
 }
 
 .hide {
-	display:none;
+  display:none
 }
 
 html {
@@ -41,7 +38,7 @@ body {
   font-family:Helvetica,Arial,Tahoma,sans-serif;
   font-size:15px;
   border-top:1px #0068ac;
-  min-width:280px;
+  min-width:280px
 }
 
 a:active,a:link,a:visited {
@@ -73,7 +70,6 @@ header {
   margin:0 auto;
   color:#666;
   line-height:150%
-/* background: #fff url("heart.jpg") no-repeat 95% 95%; */
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -81,15 +77,14 @@ h1,h2,h3,h4,h5,h6 {
   font-weight:400;
   line-height:120%;
   color:#0068ac;
-  margin:1.5em 0 .5em;
+  margin:1.5em 0 .5em
 }
 
 h1 {
   font-size:2.5em;
-  margin: 0;
-  padding: 0;
+  margin:0;
+  padding:0
 }
-
 
 h2 {
   font-size:1.67em
@@ -107,17 +102,15 @@ p {
   margin:1.2em 0
 }
 
-
-
 .questionNumber {
   font-weight:700;
   color:#0068ac;
-  margin-top: 30px;
+  margin-top:30px
 }
 
 .questionText {
   font-weight:700;
-  margin-top: 1.5em;
+  margin-top:1.5em
 }
 
 input[type=text] {
@@ -125,7 +118,7 @@ input[type=text] {
   border-radius:5px;
   border:2px solid #d1d1d1;
   width:275px;
-  padding: 5px 15px;
+  padding:5px 15px
 }
 
 input[type=text]:focus {
@@ -134,27 +127,38 @@ input[type=text]:focus {
   border:2px solid #a7a7a7
 }
 
-button {
+.doctorButton,button.next {
+  background-color:#b91806;
+  border-radius:5px
+}
+
+button.next {
   width:150px;
   height:45px;
-  border:none;
-  line-height:120%
+  line-height:120%;
+  color:#fff
 }
 
-.doctorButton a, button {
-  display:block;
+.doctorButton,button.next,button.restart {
+  cursor:pointer;
+  display:inline-block;
   margin-top:2em;
-  color:#fff;
-  border-radius:5px;
-  background-color:#b91806
+  border:none
 }
 
-button:focus {
+.doctorButton:focus,button.next:focus {
   outline-style:none;
   box-shadow:none;
   border:2px solid #b91806
 }
 
+button.restart {
+  color:#0067ab;
+  text-decoration:underline;
+  margin-left:2em;
+  background-color:transparent;
+  vertical-align:bottom
+}
 
 input[type=submit]:focus {
   outline-style:none;
@@ -173,40 +177,50 @@ input[type=submit]:focus {
   text-align:center;
   height:70px;
   width:300px;
+  color:#fff;
   font-size:1.5em;
   text-decoration:none;
-  line-height:3em
+  line-height:3em;
+  padding:0 45px
 }
 
-.doctorButton a:hover, button:hover {
-	background-color: #da1c07;
+.doctorButton a:hover,button.next:hover {
+  background-color:#da1c07
 }
 
+button.restart:hover {
+  color:#474646;
+  border:none
+}
+
+.BGimg {
+  background:#fff url(heart.jpg) no-repeat 95% 95%
+}
 
 /* ---------------------- Mobile Styles -----------------------*/
-
 @media screen and (max-width:1040px) {
-	body {
-	  padding-left:30px;
-	  padding-right: 30px;
-	}
+body {
+  padding-left:30px;
+  padding-right:30px
+}
 }
 
 @media screen and (max-width:450px) {
-	header img {
-		max-width: 300px;
-		height:auto;
-	}
-	body {
-	  padding-left:20px;
-	  padding-right: 20px;
-	}
+header img {
+  max-width:300px;
+  height:auto
+}
 
-	.mainWrap {
-		padding: 20px;
-	}
+body {
+  padding-left:20px;
+  padding-right:20px
+}
 
-  input[type=text], .doctorButton a {
-  	width:100%;
-  }
+.mainWrap {
+  padding:20px
+}
+
+input[type=text],.doctorButton a {
+  width:100%
+}
 }
