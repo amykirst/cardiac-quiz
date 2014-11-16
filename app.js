@@ -1,3 +1,5 @@
+// What if age is greater than 79? There is no score to assign.
+
 // Make document extend to bottom if content is too short
 function setHeight() {
   var desiredHeight = $(window).height() - $("header").outerHeight(true) - 60; // top and bottom padding

@@ -184,7 +184,7 @@ input[type=submit]:focus {
   padding:0 45px
 }
 
-.doctorButton a:hover,button.next:hover {
+.doctorButton:hover, button.next:hover {
   background-color:#da1c07
 }
 
