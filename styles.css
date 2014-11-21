@@ -59,7 +59,7 @@ header {
   margin:0 auto 30px
 }
 
-.mainWrap {
+.MainWrap {
   background:#fff;
   border-radius:10px;
   box-shadow:0 0 10px 0;
@@ -216,7 +216,7 @@ body {
   padding-right:20px
 }
 
-.mainWrap {
+.MainWrap {
   padding:20px
 }
 

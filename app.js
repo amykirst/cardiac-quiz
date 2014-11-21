@@ -1,13 +1,3 @@
-// What if age is greater than 79? There is no score to assign.
-
-// Make document extend to bottom if content is too short
-function setHeight() {
-  var desiredHeight = $(window).height() - $("header").outerHeight(true) - 60; // top and bottom padding
-  $(".mainWrap").css("min-height", desiredHeight);
-  //console.log($(window).height());
-  //console.log($("header").outerHeight(true));
-  //console.log(desiredHeight);
-}
 
 function quesProcess() {
     var position = 0;
@@ -73,7 +63,7 @@ function quesProcess() {
             score = 12;
           } else if (age >= 70 && age <= 74) {
             score = 14;
-          } else if (age >= 75 && age <= 79) {
+          } else if (age >= 75) {
             score = 16;
           }
           console.log(score);
@@ -138,7 +128,7 @@ function quesProcess() {
         if ((cholesterol == "Greater than 279") && (age >= 60 && age <= 69)) {
           score = score + 4;
         }
-        if ((cholesterol == "Greater than 279") && (age >= 70 && age <= 79)) {
+        if ((cholesterol == "Greater than 279") && (age >= 70)) {
           score = score + 2;
         }
         console.log(score);
@@ -161,7 +151,7 @@ function quesProcess() {
         if ((smoker == "Yes") && (age >= 60 && age <= 69)) {
           score = score + 2;
         }
-        if ((smoker == "Yes") && (age >= 70 && age <= 79)) {
+        if ((smoker == "Yes") && (age >= 70)) {
           score = score + 1;
         }
         console.log(score);
@@ -272,20 +262,20 @@ function quesProcess() {
           // Add background image if window is wider than 900px
           if (($(window).width()) > 900) {
             $(".results").css("min-height", "300px");
-            $(".mainWrap").addClass("BGimg");
+            $(".MainWrap").addClass("BGimg");
           }
 
           // Remove background image if window is less than 900px on resize
           $(window).resize(function() {
-            if (($(".mainWrap").hasClass("BGimg")) && ($(window).width() <
+            if (($(".MainWrap").hasClass("BGimg")) && ($(window).width() <
               900)) {
-              $(".mainWrap").removeClass("BGimg");
+              $(".MainWrap").removeClass("BGimg");
               $(".results").height("auto");
             }
-            if ((!($(".mainWrap").hasClass("BGimg"))) && ($(window).width() >
+            if ((!($(".MainWrap").hasClass("BGimg"))) && ($(window).width() >
               900)) {
               $(".results").css("min-height", "300px");
-              $(".mainWrap").addClass("BGimg");
+              $(".MainWrap").addClass("BGimg");
             }
           });
 
@@ -340,10 +330,20 @@ function quesProcess() {
 
   } // end quesProcess function
 
+// Make document extend to bottom if content is too short
+function setHeight() {
+  var desiredHeight = $(window).height() - $("header").outerHeight(true) - 60; // top and bottom padding
+  $(".MainWrap").css("min-height", desiredHeight);
+  console.log("Window height is " + $(window).height());
+  console.log("Header height is " + $("header").outerHeight(true));
+  console.log("Desired height is " + desiredHeight);
+}
+
 
 $(document).ready(function() {
+  
   // Set mainWrap height on page load
-  setHeight();
+   setHeight();
 
   $(window).resize(function() {
     setHeight();
