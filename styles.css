@@ -146,9 +146,12 @@ button.next {
   border:none
 }
 
-.doctorButton:focus,button.next:focus {
+input[type=submit]:focus,.doctorButton:focus,button.next:focus, button.restart:focus {
   outline-style:none;
   box-shadow:none;
+}
+
+.doctorButton:focus,button.next:focus {
   border:2px solid #b91806
 }
 
@@ -161,8 +164,6 @@ button.restart {
 }
 
 input[type=submit]:focus {
-  outline-style:none;
-  box-shadow:none;
   background-color:#da1c07
 }
 
@@ -192,6 +193,7 @@ button.restart:hover {
   color:#474646;
   border:none
 }
+
 
 .BGimg {
   background:#fff url(heart.jpg) no-repeat 95% 95%
