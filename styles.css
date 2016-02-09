@@ -33,12 +33,16 @@ html {
   background:#eaeaea url(background.png) repeat-x left top
 }
 
+body, input {
+  box-sizing: border-box;
+}
+
 body {
   padding:30px 0;
   font-family:Helvetica,Arial,Tahoma,sans-serif;
   font-size:15px;
   border-top:1px #0068ac;
-  min-width:280px
+  min-width:280px;
 }
 
 a:active,a:link,a:visited {
@@ -118,7 +122,8 @@ input[type=text] {
   border-radius:5px;
   border:2px solid #d1d1d1;
   width:275px;
-  padding:5px 15px
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 input[type=text]:focus {
